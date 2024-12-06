@@ -1,0 +1,24 @@
+{
+  "name": "solid-info",
+  "version": "1.0.0",
+  "description": "static site generator built with solidjs",
+  "license": "https://www.gnu.org/licenses/gpl-3.0.txt",
+  "type": "module",
+  "main": "vite",
+  "scripts": {
+    "check": "npm-check",
+    "start": "vite",
+    "build": "vite build",
+    "build-container": "vite build & podman build -t solidinfo:latest .",
+    "run-container": "podman run -it --rm --init -p 3000:3000 solidinfo:latest"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.15.1",
+    "marked": "^15.0.3",
+    "solid-js": "*"
+  },
+  "devDependencies": {
+    "vite": "^6.0.3",
+    "vite-plugin-solid": "^2.10.2"
+  }
+}
