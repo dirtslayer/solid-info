@@ -9,7 +9,7 @@
     "check": "npm-check",
     "start": "vite",
     "build": "vite build",
-    "build-container": "vite build & podman build -t solidinfo:latest .",
+    "build-container": "vite build && podman build -t solidinfo:latest .",
     "run-container": "podman run -it --rm --init -p 3000:3000 solidinfo:latest"
   },
   "dependencies": {
