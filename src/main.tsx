@@ -26,7 +26,7 @@ const App = () => {
     <For each={books().books} fallback={<div>Loading...</div>}>
     {(book) => <><h3>{book.title}</h3><ul>
       <For each={book.chapters}>
-      {(c) => <li><a href= { c.file.slice(0, -3) }>{c.file} </a></li>}
+      {(c) => <li><a href= { c.file.slice(0, -3) }>{c.file.replaceAll("_"," ").split("/").slice(-1).pop().slice(0,-3)} </a></li>}
       </For></ul></>
     }
     </For>

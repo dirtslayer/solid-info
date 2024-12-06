@@ -1,7 +1,7 @@
 import { useParams } from "@solidjs/router";
 import { marked } from "marked";
 import { createSignal, createResource, Switch, Match, Show } from "solid-js";
-
+import "./md.css";
 /*
  *  only supports one folder level down
  */

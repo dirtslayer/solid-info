@@ -1,25 +1,58 @@
 {
   "books": [
     {
-      "title": "One Step At A Time: An ADHD Journal",
+      "title": "Darrell's Notes",
       "chapters": [
         {
-          "file": "/chapters/Welcome to hell.md"
+          "file": "1.md"
         },
         {
-          "file": "/chapters/There is always tomorrow.md"
+          "file": "Notes/Krita_for_Notes.md"
         }
       ]
     },
     {
-      "title": "Journal 2024",
+      "title": "Darrell's Journal 2024",
       "chapters": [
-        {
-          "file": "/journal/01-01-2024.md"
-        },
-        {
-          "file": "/journal/02-02-2024.md"
-        }
+
+{
+"file":"2024_Journal/cover.md"
+},
+{
+"file":"2024_Journal/2024_11_07.md"
+},
+{
+"file":"2024_Journal/2024_11_06.md"
+},
+{
+"file":"2024_Journal/2024_05_10.md"
+},
+{
+"file":"2024_Journal/2024_05_09.md"
+},
+{
+"file":"2024_Journal/2024_05_07.md"
+},
+{
+"file":"2024_Journal/2024_05_04.md"
+},
+{
+"file":"2024_Journal/2024_05_03.md"
+},
+{
+"file":"2024_Journal/2024_04_24.md"
+},
+{
+"file":"2024_Journal/2024_04_21.md"
+},
+{
+"file":"2024_Journal/2024_04_07.md"
+},
+{
+"file":"2024_Journal/2024_04_04.md"
+}
+
+
       ]
     }
   ]
