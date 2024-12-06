@@ -26,7 +26,7 @@ const App = () => {
     <For each={books().books} fallback={<div>Loading...</div>}>
     {(book) => <><h3>{book.title}</h3><ul>
       <For each={book.chapters}>
-      {(c) => <li><a href= {'/md/' + c.file.slice(0, -3) }>{c.file} </a></li>}
+      {(c) => <li><a href= { c.file.slice(0, -3) }>{c.file} </a></li>}
       </For></ul></>
     }
     </For>
@@ -46,8 +46,9 @@ render(
   () => (
     <Router>
      <Route path="/" component={App} />
-    <Route path="/md/:md" component={Md} />
-    <Route path="/md/:md/:md1" component={Md} />
+     <Route path="/:md/" component={Md} />
+    <Route path="/:md/:md1" component={Md} />
+
     <Route path="*paramName" component={NotFound} />
     </Router>
   ) ,
