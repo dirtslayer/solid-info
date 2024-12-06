@@ -27,6 +27,7 @@ export default function Md() {
     const [mdtext] = createResource(params, fetchMd);
 
     return (<>
+    <div class="wrapper">
     <Show when={mdtext.loading}>
     <p>Loading...</p>
     </Show>
@@ -35,9 +36,11 @@ export default function Md() {
     <span>Error: {mdtext.error}</span>
     </Match>
     <Match when={mdtext()}>
-    <div innerHTML={ marked.parse(mdtext()) }></div>
+    <div class="md" innerHTML={ marked.parse(mdtext()) }></div>
     </Match>
     </Switch>
+     <footer class="page-footer">Sticky footer</footer>
+     </div>
     </>
     );
 }
