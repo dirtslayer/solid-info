@@ -1,6 +1,6 @@
 import { createSignal, createResource } from "solid-js";
 import { render } from "solid-js/web";
-import { Router, Route } from "@solidjs/router";
+import { Router, Route, A } from "@solidjs/router";
 import  Md from "./routes/md";
 import  NotFound from "./routes/notfound";
 
@@ -26,7 +26,9 @@ const App = () => {
     <For each={books().books} fallback={<div>Loading...</div>}>
     {(book) => <><h3>{book.title}</h3><ul>
       <For each={book.chapters}>
-      {(c) => <li><a href= { c.file.slice(0, -3) }>{c.file.replaceAll("_"," ").split("/").slice(-1).pop().slice(0,-3)} </a></li>}
+      {(c) => <li><A href= { c.file.slice(0, -3) }>
+        {c.file.replaceAll("_"," ").split("/").slice(-1).pop().slice(0,-3)} 
+        </A></li>}
       </For></ul></>
     }
     </For>

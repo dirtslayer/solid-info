@@ -1,4 +1,4 @@
-import { useParams } from "@solidjs/router";
+import { useParams, useNavigate } from "@solidjs/router";
 import { marked } from "marked";
 import { createSignal, createResource, Switch, Match, Show, onMount, onCleanup } from "solid-js";
 import "./md.css";
@@ -21,15 +21,20 @@ const fetchMd = async (params) => {
 
 
 export default function Md() {
+const navigate = useNavigate();
+
     const cparams = useParams();
     const [params, setParams] = createSignal(cparams);
     const [sy,setSy] = createSignal(window.scrollY * 1.0 );
+    const [key,setKey] = createSignal(":");
     const [mdtext] = createResource(params, fetchMd);
 
     let divRef: HTMLDivElement;
 
     onMount(() => {
-        document.addEventListener('scroll', handleScroll);
+        document.addEventListener("scroll", handleScroll);
+        document.addEventListener("keydown", onkeydown);
+
     });
 
     onCleanup(() => {
@@ -45,6 +50,20 @@ export default function Md() {
     };
 
 
+const onkeydown = (event: any ) => {
+    setKey (event.key);
+    if (event.key === '1' ) {
+        navigate("/1", { replace: false });
+    }
+
+    if (event.key === 'h' || event.key === 'H' ) {
+        navigate("/help", { replace: false });
+    }
+    
+    if (event.key === 't' || event.key === 'T' ) {
+        navigate("/", { replace: false });
+    }
+};
 
     return (<>
     <div ref={divRef!} class="wrapper">
@@ -56,8 +75,8 @@ export default function Md() {
     <span>Error: {mdtext.error}</span>
     </Match>
     <Match when={mdtext()}>
-    <div class="md" innerHTML={ marked.parse(mdtext()) }></div>
-    <footer class="page-footer">-----Info: { cparams.md } / { cparams.md1 ?? " " }
+    <div class="md" innerHTML={ marked.parse(mdtext()) + "<p> ‎</p><p> ‎</p>" }></div>
+    <footer class="page-footer">{ key() }---Info: { cparams.md } / { cparams.md1 ?? " " }
      ----- lines: { mdtext().split('\n').length  } --{ sy() }%-----</footer>
     </Match>
     </Switch>

@@ -1,5 +1,4 @@
 
-
 .page-footer {
     background-color: black;
     color: #fff;
@@ -17,9 +16,7 @@
       box-sizing: border-box;
       height: 100%;
       padding: 0;
-      padding-bottom:2cm;
       margin: 0;
-      margin-bottom:2cm;
       font: 1.2em sans-serif;
 
         -ms-text-size-adjust: 100%;
