@@ -1,6 +1,6 @@
 import { useParams } from "@solidjs/router";
 import { marked } from "marked";
-import { createSignal, createResource, Switch, Match, Show } from "solid-js";
+import { createSignal, createResource, Switch, Match, Show, onMount, onCleanup } from "solid-js";
 import "./md.css";
 /*
  *  only supports one folder level down
@@ -23,11 +23,31 @@ const fetchMd = async (params) => {
 export default function Md() {
     const cparams = useParams();
     const [params, setParams] = createSignal(cparams);
-
+    const [sy,setSy] = createSignal(window.scrollY * 1.0 );
     const [mdtext] = createResource(params, fetchMd);
 
+    let divRef: HTMLDivElement;
+
+    onMount(() => {
+        document.addEventListener('scroll', handleScroll);
+    });
+
+    onCleanup(() => {
+        document.removeEventListener('scroll', handleScroll);
+    });
+
+    const handleScroll = (event: any) => {
+        let scrollTop: number = window.scrollY;
+        let docHeight: number  = document.body.scrollHeight;
+        let winHeight: number = window.innerHeight;
+        let scrollPercent: number = docHeight - winHeight;
+        setSy((scrollTop*100/scrollPercent).toFixed(0));
+    };
+
+
+
     return (<>
-    <div class="wrapper">
+    <div ref={divRef!} class="wrapper">
     <Show when={mdtext.loading}>
     <p>Loading...</p>
     </Show>
@@ -37,9 +57,11 @@ export default function Md() {
     </Match>
     <Match when={mdtext()}>
     <div class="md" innerHTML={ marked.parse(mdtext()) }></div>
+    <footer class="page-footer">-----Info: { cparams.md } / { cparams.md1 ?? " " }
+     ----- lines: { mdtext().split('\n').length  } --{ sy() }%-----</footer>
     </Match>
     </Switch>
-     <footer class="page-footer">Sticky footer</footer>
+
      </div>
     </>
     );
