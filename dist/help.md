@@ -4,4 +4,6 @@ h - help
 
 t - top / home
 
+q - quit
+
 

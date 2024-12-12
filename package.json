@@ -6,6 +6,7 @@
   "type": "module",
   "main": "vite",
   "scripts": {
+    "install-dev": "npm i --save-dev",
     "check": "npm-check",
     "start": "vite",
     "build": "vite build",
