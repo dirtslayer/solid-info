@@ -48,10 +48,10 @@ const fetchNav = async (cparams: any) => {
         found = true;
       } else {
       if (!found) {
-        prev = ch.file.slice(0,-3);
+        prev = '/' + ch.file.slice(0,-3);
       } else {
         if (!nextset ) {
-          next = ch.file.slice(0,-3);
+          next = '/' + ch.file.slice(0,-3);
           nextset = true;
         }
       }
@@ -102,17 +102,19 @@ export default function Md() {
 
 
   const onkeydown = (event: any) => {
+   
     setKey(event.key);
+   
     if (event.key === '1') {
-      navigate("/1", { replace: false });
+      window.location.href = "/1";
     }
 
     if (event.key === 'h' || event.key === 'H') {
-      navigate("/help", { replace: false });
+      window.location.href = "/help";
     }
 
     if (event.key === 't' || event.key === 'T') {
-      navigate("/", { replace: false });
+      window.location.href = "/";
     }
 
     if (event.key === 'q' || event.key === 'Q') {
@@ -120,10 +122,10 @@ export default function Md() {
     }
 
     if (event.key === 'n' || event.key === 'N') {
-      navigate(nav().next)
+      window.location.href = nav().next;
     }
     if (event.key === 'p' || event.key === 'P') {
-      navigate(nav().prev)
+      window.location.href = nav().prev
     }
   };
 
