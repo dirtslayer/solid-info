@@ -109,11 +109,15 @@ export default function Md() {
       window.location.href = "/1";
     }
 
-    if (event.key === 'h' || event.key === 'H') {
+    if (event.key === '?') {
       window.location.href = "/help";
     }
 
-    if (event.key === 't' || event.key === 'T') {
+    if (event.key === 'h' || event.key === 'H') {
+      window.location.href = "/The_SolidInfo_Manual/tutorial";
+    }
+
+    if (event.key === 'u' || event.key === 'U') {
       window.location.href = "/";
     }
 
@@ -124,9 +128,16 @@ export default function Md() {
     if (event.key === 'n' || event.key === 'N') {
       window.location.href = nav().next;
     }
+    
     if (event.key === 'p' || event.key === 'P') {
-      window.location.href = nav().prev
+      window.location.href = nav().prev;
     }
+    
+    if (event.key === 'v' || event.key === 'V') {
+      window.location.href = window.location.href + '.md';
+    }
+
+    
   };
 
   return (<>
