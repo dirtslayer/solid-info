@@ -1,7 +1,8 @@
+
 {
   "books": [
     {
-      "title": "Darrell's Notes",
+      "title": "Notes",
       "chapters": [
         {
           "file": "1.md"
@@ -14,48 +15,80 @@
         }
       ]
     },
+    
+    
+    {
+      "title": "The Solid Info Manual",
+      "chapters": [
+    {
+          "file": "The_SolidInfo_Manual/Cover.md"
+        },
+        {
+          "file": "The_SolidInfo_Manual/tutorial.md"
+        },
+        {
+          "file": "The_SolidInfo_Manual/gist_markdown_examples.md"
+        }
+        
+      ]
+    },
+    
+    {
+      "title": "The Complete FreeBSD (excerpt)",
+      "chapters": [
+        {
+        "file": "The_Complete_FreeBSD/cover.md"
+        },
+        {
+        "file": "The_Complete_FreeBSD/839.md"
+        },
+        {
+        "file": "The_Complete_FreeBSD/840.md"
+        },
+        {
+        "file": "The_Complete_FreeBSD/841.md"
+        }
+      ]
+    },
     {
       "title": "Darrell's Journal 2024",
       "chapters": [
-
-{
-"file":"2024_Journal/cover.md"
-},
-{
-"file":"2024_Journal/2024_11_07.md"
-},
-{
-"file":"2024_Journal/2024_11_06.md"
-},
-{
-"file":"2024_Journal/2024_05_10.md"
-},
-{
-"file":"2024_Journal/2024_05_09.md"
-},
-{
-"file":"2024_Journal/2024_05_07.md"
-},
-{
-"file":"2024_Journal/2024_05_04.md"
-},
-{
-"file":"2024_Journal/2024_05_03.md"
-},
-{
-"file":"2024_Journal/2024_04_24.md"
-},
-{
-"file":"2024_Journal/2024_04_21.md"
-},
-{
-"file":"2024_Journal/2024_04_07.md"
-},
-{
-"file":"2024_Journal/2024_04_04.md"
-}
-
-
+        {
+          "file": "2024_Journal/cover.md"
+        },
+        {
+          "file": "2024_Journal/2024_11_07.md"
+        },
+        {
+          "file": "2024_Journal/2024_11_06.md"
+        },
+        {
+          "file": "2024_Journal/2024_05_10.md"
+        },
+        {
+          "file": "2024_Journal/2024_05_09.md"
+        },
+        {
+          "file": "2024_Journal/2024_05_07.md"
+        },
+        {
+          "file": "2024_Journal/2024_05_04.md"
+        },
+        {
+          "file": "2024_Journal/2024_05_03.md"
+        },
+        {
+          "file": "2024_Journal/2024_04_24.md"
+        },
+        {
+          "file": "2024_Journal/2024_04_21.md"
+        },
+        {
+          "file": "2024_Journal/2024_04_07.md"
+        },
+        {
+          "file": "2024_Journal/2024_04_04.md"
+        }
       ]
     }
   ]
