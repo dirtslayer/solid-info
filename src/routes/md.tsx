@@ -15,16 +15,19 @@ import "./md.css";
  *  has 2 params, second optional, if there are 2, the second is the filename
  *  and the first is the folder, only supports one folder level down atm,
  *  ie. there are no sub chapters
+
+ fetch(`./${window.location.pathname}/books.json`))
+ 
  */
 const fetchMd = async (params: any): Promise<string> => {
   console.log('fetchmd: params.md ' + params.md);
   console.log('fetchmd: params.md1 ' + params.md1);
   if (undefined === params.md1) {
-    const response_text = (await fetch(`/${params.md}.md`)).text();
+    const response_text = (await fetch(`/${window.location.pathname}/${params.md}.md`)).text();
     console.log(response_text);
     return response_text;
   } else {
-    const response_text = (await fetch(`/${params.md}/${params.md1}.md`)).text();
+    const response_text = (await fetch(`/${window.location.pathname}/${params.md}/${params.md1}.md`)).text();
     console.log(response_text);
     return response_text;
   }
@@ -32,7 +35,7 @@ const fetchMd = async (params: any): Promise<string> => {
 
 const fetchNav = async (cparams: any) => {
   console.log('fetchnav cparams: ' + cparams.md );
-  const response = await fetch('/books.json');
+  const response = await fetch(`/${window.location.pathname}/books.json`);
   const b = await response.json();
   console.log(b);
   let prev = "/";
