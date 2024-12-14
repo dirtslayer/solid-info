@@ -13,7 +13,7 @@ import NotFound from "./routes/notfound";
 
 
 const fetchBooks = async (id) =>
-  (await fetch(`/books.json`)).json();
+  (await fetch(`./${window.location.pathname}/books.json`)).json();
 
 const App = () => {
   const [booksId, setBooksId] = createSignal(1);
